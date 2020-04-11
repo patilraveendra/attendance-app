@@ -6,7 +6,6 @@
           <md-card-header>
             <div class="md-title">Welcome,</div>
           </md-card-header>
-
           <md-card-content>
             <div class="md-layout md-gutter">
               <div class="md-layout-item md-small-size-100">
@@ -32,7 +31,6 @@
                 </md-field>
               </div>
             </div>
-
             <div v-if="students">
               <md-list>
                 <md-list-item>
@@ -70,6 +68,7 @@
 import { mapState } from "vuex";
 
 const fb = require("../firebaseConfig.ts");
+
 export default {
   data() {
     let dateFormat = this.$material.locale.dateFormat || "yyyy-MM-dd";
@@ -84,18 +83,19 @@ export default {
       selectedBatch: null
     };
   },
+
   watch: {
     myOptionSelected: function(batchId) {
       this.getStudents(batchId);
       this.selectedBatch = batchId;
     }
   },
+
   computed: {
     ...mapState(["userProfile", "currentUser"])
   },
   methods: {
     getStudents: function(event) {
-      console.log(event);
       this.absent = [];
       let studentArray = [];
       var studentRef = fb.studentCollection;
@@ -108,11 +108,11 @@ export default {
         });
       this.students = studentArray;
     },
+
     markAttendance: function(event) {
       var absentListRef = fb.absentCollection;
- 
       for (let absentStudentId of this.absent) {
-         var absentRef = absentListRef.push();
+        var absentRef = absentListRef.push();
         console.log("Saving to firebase - " + absentStudentId); // 1, "string", false
         absentRef.set({
           absentstudent: absentStudentId,
@@ -122,6 +122,7 @@ export default {
       }
     }
   },
+
   mounted() {
     let batchArray = [];
     var batchesRef = fb.batchCollection;
@@ -131,6 +132,7 @@ export default {
     });
     this.batches = batchArray;
   },
+
   filters: {
     formatDate(val) {},
     trimLength(val) {}
