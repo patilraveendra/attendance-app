@@ -51,8 +51,7 @@
                   <md-checkbox v-model="absent" :value="student.studentid" :id="student.name"></md-checkbox>
                 </md-list-item>
               </md-list>
-              {{absent}}
-              <md-button class="md-raised md-primary">Save</md-button>
+              <md-button class="md-raised md-primary" @click="markAttendance">Save</md-button>
               <md-button class="md-raised md-accent">Cancel</md-button>
             </div>
           </md-card-content>
@@ -82,12 +81,13 @@ export default {
       students: null,
       present: true,
       absent: [],
-      selectedDate: null
+      selectedBatch: null
     };
   },
   watch: {
-    myOptionSelected: function(event) {
-      this.getStudents(event);
+    myOptionSelected: function(batchId) {
+      this.getStudents(batchId);
+      this.selectedBatch = batchId;
     }
   },
   computed: {
@@ -107,6 +107,19 @@ export default {
           studentArray.push(snapshot.val());
         });
       this.students = studentArray;
+    },
+    markAttendance: function(event) {
+      var absentListRef = fb.absentCollection;
+ 
+      for (let absentStudentId of this.absent) {
+         var absentRef = absentListRef.push();
+        console.log("Saving to firebase - " + absentStudentId); // 1, "string", false
+        absentRef.set({
+          absentstudent: absentStudentId,
+          batchid: this.selectedBatch,
+          date: this.todayDate.toDateString()
+        });
+      }
     }
   },
   mounted() {

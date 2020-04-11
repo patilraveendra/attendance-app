@@ -21,6 +21,8 @@ const currentUser = auth.currentUser
 const batchCollection = db.ref('batch')
 const classCollection = db.ref('class')
 const studentCollection = db.ref('student')
+const absentCollection = db.ref('absent')
+
 
 export {
     db,
@@ -28,5 +30,6 @@ export {
     currentUser,
     batchCollection,
     classCollection,
-    studentCollection
+    studentCollection,
+    absentCollection
 }
