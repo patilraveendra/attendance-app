@@ -1,0 +1,261 @@
+{
+  "absent": {
+    "-M4eetoElX48rh7y_bg_": {
+      "absentstudent": 17,
+      "batchid": "B0002",
+      "date": "Sun Apr 12 2020"
+    },
+    "-M4ef9bRsyUhbmbLGCUS": {
+      "absentstudent": 16,
+      "batchid": "B0002",
+      "date": "Sun Apr 12 2020"
+    },
+    "-M4ef9bTtVp6jyVHOGQh": {
+      "absentstudent": 18,
+      "batchid": "B0002",
+      "date": "Sun Apr 12 2020"
+    },
+    "-M4eg2ggpMHKbPSWY-75": {
+      "absentstudent": 4,
+      "batchid": "B0002",
+      "date": "Sun Apr 12 2020"
+    },
+    "-M4eg2gi_B6mkpskyGCs": {
+      "absentstudent": 18,
+      "batchid": "B0002",
+      "date": "Sun Apr 12 2020"
+    },
+    "-M4egnhiVQo4CQEriFG4": {
+      "absentstudent": 17,
+      "batchid": "B0002",
+      "date": "Wed Apr 15 2020"
+    },
+    "-M4egnhjy0IfAcAruCel": {
+      "absentstudent": 19,
+      "batchid": "B0002",
+      "date": "Wed Apr 15 2020"
+    }
+  },
+  "batch": [
+    {
+      "classid": "C001",
+      "id": "B0001",
+      "name": "VB001"
+    },
+    {
+      "classid": "C001",
+      "id": "B0002",
+      "name": "VB002"
+    },
+    {
+      "classid": "C001",
+      "id": "B0003",
+      "name": "VB003"
+    },
+    {
+      "classid": "C001",
+      "id": "B0004",
+      "name": "VB004"
+    }
+  ],
+  "class": [
+    {
+      "id": "C001",
+      "name": "rave tech"
+    },
+    {
+      "id": "C002",
+      "name": "babu tech"
+    },
+    {
+      "id": "C003",
+      "name": "naga tech"
+    }
+  ],
+  "student": [
+    {
+      "batchid": "B0001",
+      "name": "Student 1",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "f",
+      "studentid": 1
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 2",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 2
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 3",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 3
+    },
+    {
+      "batchid": "B0002",
+      "name": "Student 4",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "f",
+      "studentid": 4
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 5",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 5
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 6",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 6
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 7",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 7
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 8",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "f",
+      "studentid": 8
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 9",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 9
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 10",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 10
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 11",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 11
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 12",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 12
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 13",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 13
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 14",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 14
+    },
+    {
+      "batchid": "B0001",
+      "name": "Student 15",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 15
+    },
+    {
+      "batchid": "B0002",
+      "name": "Student 16",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 16
+    },
+    {
+      "batchid": "B0002",
+      "name": "Student 21",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 17
+    },
+    {
+      "batchid": "B0002",
+      "name": "Student 22",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 18
+    },
+    {
+      "batchid": "B0002",
+      "name": "Student 23",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 19
+    },
+    {
+      "batchid": "B0002",
+      "name": "Student 24",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 20
+    },
+    {
+      "batchid": "B0003",
+      "name": "Student 25",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 21
+    },
+    {
+      "batchid": "B0003",
+      "name": "Student 26",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 22
+    },
+    {
+      "batchid": "B0004",
+      "name": "Student 27",
+      "parentphone": "9594959551",
+      "photourl": "",
+      "sex": "m",
+      "studentid": 23
+    }
+  ]
+}
