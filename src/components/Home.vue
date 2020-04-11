@@ -13,10 +13,13 @@
                   <label>Select date</label>
                 </md-datepicker>
               </div>
+
+              <!-- div batch -->
               <div class="md-layout-item md-small-size-100">
                 <md-field>
                   <label for="batchType">Select Batch</label>
                   <md-select
+                    md-dense
                     vif="batches.length"
                     name="batchType"
                     v-model="myOptionSelected"
@@ -30,27 +33,33 @@
                   </md-select>
                 </md-field>
               </div>
-            </div>
-            <div v-if="students">
-              <md-list>
-                <md-list-item>
-                  <md-avatar></md-avatar>
-                  <span class="md-list-item-text">Name of student</span>
-                  <span>Absent</span>
-                </md-list-item>
-                <md-list-item v-for="student in students" v-bind:key="student['.key']">
-                  <md-avatar>
-                    <md-icon>assignment_ind</md-icon>
-                  </md-avatar>
-                  <span class="md-list-item-text">
-                    {{ student.name }}
-                    <!-- <input type="checkbox" :value="student.studentid" :id="student.studentid" v-model="absent" @click="check($event)"> -->
-                  </span>
-                  <md-checkbox v-model="absent" :value="student.studentid" :id="student.name"></md-checkbox>
-                </md-list-item>
-              </md-list>
-              <md-button class="md-raised md-primary" @click="markAttendance">Save</md-button>
-              <md-button class="md-raised md-accent">Cancel</md-button>
+              <!-- div batch -->
+
+              <!-- div students -->
+              <div v-if="students" class="md-layout-item md-small-size-100">
+                <md-list>
+                  <md-list-item class="md-elevation-1 md-primary">
+                    <md-avatar></md-avatar>
+                    <span class="md-list-item-text">Student</span>
+                    <span>Absent</span>
+                  </md-list-item>
+
+                  <div v-for="student in students" v-bind:key="student['.key']">
+                    <md-list-item class="md-elevation-1">
+                      <md-avatar>
+                        <md-icon>assignment_ind</md-icon>
+                      </md-avatar>
+                      <span class="md-list-item-text">{{ student.name }}</span>
+                      <md-switch v-model="absent" :value="student.studentid" :id="student.name"></md-switch>
+                      <!-- <md-checkbox v-model="absent" :value="student.studentid" :id="student.name"></md-checkbox> -->
+                    </md-list-item>
+                    <md-divider></md-divider>
+                  </div>
+                </md-list>
+                <md-button class="md-raised md-primary" @click="markAttendance">Save</md-button>
+                <md-button class="md-raised md-accent">Cancel</md-button>
+              </div>
+              <!-- div students -->
             </div>
           </md-card-content>
         </md-card>

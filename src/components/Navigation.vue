@@ -1,7 +1,7 @@
 <template>
 <html>
   <div class="phone-viewport">
-    <md-toolbar class="md-accent" md-elevation="1">
+    <md-toolbar class="md-primary" md-elevation="1">
       <h3 class="md-title" style="flex: 1">Title</h3>
       <md-button>Home</md-button>
       <md-button @click="logout" class="md-primary">Logout</md-button>
