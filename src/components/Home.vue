@@ -75,6 +75,11 @@
 </style>
 <script>
 import { mapState } from "vuex";
+import Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+
+Vue.use(VueAxios, axios);
 
 const fb = require("../firebaseConfig.ts");
 
@@ -119,6 +124,7 @@ export default {
     },
 
     markAttendance: function(event) {
+      console.log(this.students);
       var absentListRef = fb.absentCollection;
       for (let absentStudentId of this.absent) {
         var absentRef = absentListRef.push();
@@ -128,7 +134,48 @@ export default {
           batchid: this.selectedBatch,
           date: this.todayDate.toDateString()
         });
+        this.sendSMS(absentStudentId);
       }
+    },
+
+    sendSMS(absentStudentId) {
+      const intersection = this.students.find(
+        e => e.studentid === absentStudentId
+      );
+
+      // console.log("absent");
+
+      //console.log(intersection.parentphone);
+
+      const data = {
+        phonenumber: intersection.parentphone,
+        sender: "MySMS",
+        message:
+          "Hello Parent! Your child " +
+          intersection.name +
+          " is absent today for batch"
+      };
+
+      //console.log(data);
+      // set the headers
+      const config = {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+
+      this.axios
+        .post(
+          "https://rmxiwimz1d.execute-api.ap-south-1.amazonaws.com/v1/smsSender",
+          data,
+          config
+        )
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   },
 
