@@ -1,4 +1,4 @@
-# attendace-app
+# attendance-app
 
 ## Project setup
 ```
