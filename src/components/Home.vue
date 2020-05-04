@@ -37,7 +37,7 @@
 
               <!-- div students -->
               <div v-if="students" class="md-layout-item md-small-size-100">
-                <md-list>
+                <md-list v-if=" !isMarking">
                   <md-list-item class="md-elevation-1 md-primary">
                     <md-avatar></md-avatar>
                     <span class="md-list-item-text">Student</span>
@@ -52,6 +52,27 @@
                       <span class="md-list-item-text">{{ student.name }}</span>
                       <md-switch v-model="absent" :value="student.studentid" :id="student.name"></md-switch>
                       <!-- <md-checkbox v-model="absent" :value="student.studentid" :id="student.name"></md-checkbox> -->
+                    </md-list-item>
+                    <md-divider></md-divider>
+                  </div>
+                </md-list>
+
+                <md-list v-if="isMarking">
+                  <md-list-item class="md-elevation-1 md-primary">
+                    <md-avatar></md-avatar>
+                    <span class="md-list-item-text">Student</span>
+                    <span>Sent</span>
+                  </md-list-item>
+
+                  <div v-for="student in absentStudents" v-bind:key="student['.key']">
+                    <md-list-item class="md-elevation-1">
+                      <md-avatar>
+                        <md-icon>assignment_ind</md-icon>
+                      </md-avatar>
+                      <span class="md-list-item-text">{{ student.name }}</span>
+                      <span>
+                        <md-icon>done</md-icon>
+                      </span>
                     </md-list-item>
                     <md-divider></md-divider>
                   </div>
@@ -92,8 +113,10 @@ export default {
       myOptionSelected: "",
       batches: null,
       students: null,
+      absentStudents: null,
       present: true,
       absent: [],
+      isMarking: false,
       selectedBatch: null
     };
   },
@@ -124,7 +147,9 @@ export default {
     },
 
     markAttendance: function(event) {
-      console.log(this.students);
+      // console.log(this.students);
+      this.absentStudents = [];
+      this.isMarking = true;
       var absentListRef = fb.absentCollection;
       for (let absentStudentId of this.absent) {
         var absentRef = absentListRef.push();
@@ -143,6 +168,7 @@ export default {
         e => e.studentid === absentStudentId
       );
 
+      this.absentStudents.push(intersection);
       // console.log("absent");
 
       //console.log(intersection.parentphone);
